@@ -1,0 +1,77 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Schema Generator</h1>
+            <ul>
+                <li><a href="#" class="nav-link active" data-section="generator">Generator</a></li>
+                <li><a href="#" class="nav-link" data-section="viewer">Schema Viewer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Generator Section -->
+        <section id="generator" class="section active">
+            <div class="card">
+                <h2>Generate Schema</h2>
+                <div class="form-group">
+                    <textarea 
+                        id="prompt-input" 
+                        rows="4" 
+                        placeholder="Enter your schema description..."
+                    ></textarea>
+                    <button id="generate-btn" class="btn">Generate Schema</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Bulk Upload</h2>
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="file-input" multiple accept=".txt" style="display: none;">
+                    <div class="dropzone">
+                        Drag & drop text files here, or click to select files
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message" style="display: none;"></div>
+
+            <div id="result-container" class="card" style="display: none;">
+                <h2>Generated Schema</h2>
+                <pre id="schema-output"></pre>
+            </div>
+        </section>
+
+        <!-- Viewer Section -->
+        <section id="viewer" class="section">
+            <div class="card">
+                <h2>Search Schemas</h2>
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search by name or email..."
+                    >
+                </div>
+                <div id="schemas-list" class="schemas-list"></div>
+            </div>
+
+            <div id="schema-details" class="card" style="display: none;">
+                <h2>Schema Details</h2>
+                <pre id="schema-details-content"></pre>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
