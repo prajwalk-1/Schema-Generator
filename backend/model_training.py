@@ -1,4 +1,3 @@
-# model_training.py
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multioutput import MultiOutputClassifier
@@ -51,7 +50,6 @@ class SchemaGenerator:
                     {"name": "category", "type": "Picklist", "required": True}
                 ]
             }
-            # Add more training examples as needed
         ]
 
         X = [item["prompt"] for item in training_data]
